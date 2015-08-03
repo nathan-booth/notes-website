@@ -1,6 +1,7 @@
 import os
 import webapp2
 import jinja2
+from google.appengine.ext import ndb
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
@@ -36,6 +37,14 @@ class Stage3(Handler):
 class Stage4(Handler):
 	def get(self):
 		self.render("stage4.html")
+
+# example dataset from which to design input
+# make a Comment class
+Comment = namedtuple('Comment', ['name', 'text'])
+
+# example data
+comments = [Comment('Phil', 'Add X and remove Y.'),
+			Comment('Lindsey', 'Change Z.')]
 		
 app = webapp2.WSGIApplication([('/', MainPaige),
 							   ('/stage1', Stage1),
