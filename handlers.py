@@ -38,9 +38,10 @@ class Stage4(Handler):
 		self.render("stage4.html")
 		
 app = webapp2.WSGIApplication([('/', MainPaige),
-								('/stage1', Stage1),
-								('/stage2', Stage2),
-								('/stage3', Stage3),
-								('/stage4', Stage4),
-								],
+							   ('/stage1', Stage1),
+							   ('/stage2', Stage2),
+							   ('/stage3', Stage3),
+							   ('/stage4', Stage4),
+							   ('/stage5', Stage4),
+							   ],
 								debug=True)
