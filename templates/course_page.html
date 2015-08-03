@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Intro to Programming</title>
-	<link rel="stylesheet" href="style.css">
+	{% block head %}
+    <link rel="stylesheet" href="style.css" />
+    <title>{% block title %}{% endblock %} Intro to Programming</title>
+    {% endblock %}
 </head>
 <body>
 <div>
 	<h1>
 		Introduction to Programming
 	</h1>
-	<h2>
-		Table of Contents
-	</h2>
 	{% block content %}
 	{% endblock %}
 	</div>

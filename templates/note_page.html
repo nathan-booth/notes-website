@@ -1,11 +1,7 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	{% extends "course_page.html" %}
-</head>
-<body>
+{% extends "course_page.html" %}
+{% block title %}Stage 4 Notes {% endblock %}
 <!-- Lessons -->
+{% block content %}
 	<div class="lesson">
 		<h2 id="lesson-1">Lesson 1: The Web and HTML</h2>
 		<div class="section">
@@ -39,5 +35,4 @@
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+{% endblock %}
