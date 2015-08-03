@@ -19,8 +19,28 @@ class Handler(webapp2.RequestHandler):
 
 class MainPaige(Handler):
 	def get(self):
-		self.render("course_page.html")
+		self.render("note_page.html")
+
+class Stage1(Handler):
+	def get(self):
+		self.render("stage1.html")
+
+class Stage2(Handler):
+	def get(self):
+		self.render("stage2.html")
+
+class Stage3(Handler):
+	def get(self):
+		self.render("stage3.html")
+
+class Stage4(Handler):
+	def get(self):
+		self.render("stage4.html")
 		
 app = webapp2.WSGIApplication([('/', MainPaige),
+								('/stage1', Stage1),
+								('/stage2', Stage2),
+								('/stage3', Stage3),
+								('/stage4', Stage4),
 								],
 								debug=True)
