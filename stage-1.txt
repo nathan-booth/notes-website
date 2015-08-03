@@ -1,0 +1,11 @@
+The Web
+
+The World Wide Web is a collection of connected HTML documents. HTTP stands for hypertext transfer protocol and it defines the rules for transferring files among computers, servers, and software (like browsers) on the web.
+
+HTML
+
+HTML stands for hypertext markup language; it is the code behind HTML documents that tells computers and browsers what information to display. An element of HTML is composed of an opening tag, content, and a closing tag, except in the case of void tags which do not require a closing tag. Elements are either inline or block; the latter forms a box around the content inside. Tags are often assigned attributes which change the functionality of an element, such as color or creating a link.
+
+Words to Work By
+
+In general, don't worry about memorizing bits of code; anything you haven't memorized by common use is easily found with a Google search or common resources, like w3schools or Stack Overflow.

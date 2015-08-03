@@ -1,0 +1,8 @@
+Document Object Model (DOM)
+
+The DOM refers to the tree-like or nested structure of HTML documents. A web page can be viewed as a series of nested boxes in which content resides. Properly structured code uses indentation to reflect the organization of the boxes.
+
+Tools
+
+Chrome and other browsers have developer tools that can be used to inspect the code behind a web page.
+Text editors like Sublime Text are used to write code because they make life for a programmer a bit easier by automatically completing bits of code, identifying syntax errors, and more.
