@@ -1,0 +1,83 @@
+{% extends "course_page.html" %}
+{% block title %}Stage 2 Notes {% endblock %}
+{% block content %}
+	<div class="lesson">
+		<h2 id="lesson-3">Lesson 3: CSS and Repetition</h2>
+		<div class="section">
+			<div class="section-title" id="lesson-3-1">
+				CSS
+			</div>
+			<div class="section-text">
+				<p>
+					CSS stands for <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets">cascading style sheets</a> and is the code that works in conjunction with HTML to affect the look or style of HTML documents. (Side note: CSS is usually used as a singular noun.) This is accomplished by using <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Selector">classes</a> in HTML that CSS can use to affect everything of the same class plus the child elements of that class (see: <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Inheritance">inheritance</a>).
+				</p>
+			</div>
+		</div>
+		<div class="section">
+			<div class="section-title" id="lesson-3-2">
+				On Repetition
+			</div>
+			<div class="section-text">
+				<p>
+					Code is used to describe and execute patterns; in programs, it automates repetitious tasks. For static objects, like many documents, programmers still like to avoid repetition in order to maintain consistent code and avoid errors. In the context of HTML and CSS, using classes to make style changes means that coders need only write a code for a class and not rewrite code each time a particular effect is needed. This reduces the chance for minor errors and simplifies the debugging process.
+				</p>
+			</div>
+		</div>
+	</div>
+		<div class="lesson">
+		<h2 id="lesson-4">Lesson 4: Automation</h2>
+		<div class="section">
+	        <div class="section-title" id="lesson-4-1">
+	            Computers and Programming
+	        </div>
+	        <div class="section-text">
+	            <p>
+	            	A <a href="http://en.wikipedia.org/wiki/Computer">computer</a> is a machine that can execute a program. A <a href="http://en.wikipedia.org/wiki/Computer_program">program</a> describes a sequence of steps for the computer to execute. Programs are written in a <a href="http://en.wikipedia.org/wiki/Programming_language">programming language</a>, which is a constructed language for writing computer programs. <a href="https://www.python.org/">Python</a> is a programming language. Python uses an <a href="http://en.wikipedia.org/wiki/Interpreter_(computing)">interpreter</a>, which allows programmers to use this <a href="http://en.wikipedia.org/wiki/High-level_programming_language">high-level language</a> to write in a way that more closely resembles human written language.
+	            </p>
+	            <p>
+	            	An expression is something that has a value. Expressions use combinations of data types, <a href="http://en.wikipedia.org/wiki/Operator_(computer_programming)">operators</a>, variables, and other expressions. Basic data types include integers (int), floating-point numbers (float), strings (str), Boolean values (Bool), and lists (list). Operators include arithmetic (addition, subtraction, multiplication, exponentiation, division, <a href="http://en.wikipedia.org/wiki/Modulo_operation">modulo</a>) and logical (and, or, not, equal to, less than, greater than, etc.) operators. A <a href="http://en.wikipedia.org/wiki/Variable_%28computer_science%29">variable</a> stores a value on the computer. <a href="http://en.wikipedia.org/wiki/Assignment_(computer_science)">Assignment</a> refers to associating some value to a variable. Beware the dangers of <a href="http://en.wikipedia.org/wiki/Aliasing_%28computing%29">aliasing</a>, when a value is referenced in multiple locations, because changing a value in one location changes it for every case associated with that location.
+	            </p>
+	        </div>
+	    </div>
+	    <div class="section">
+	        <div class="section-title" id="lesson-4-2">
+	            Strings and Lists
+	        </div>
+	        <div class="section-text">
+	        	<p>
+	        		Strings are <a href="http://en.wikipedia.org/w/index.php?title=Immutable_object">immutable</a>. Lists are mutable and <a href="https://docs.python.org/2/tutorial/datastructures.html">structured</a>, which generally makes them more powerful than strings. Both data types are indexed similarly.
+	        	</p>
+	        </div>
+	    </div>
+	    <div class="section">
+	        <div class="section-title" id="lesson-4-3">
+	            Functions
+	        </div>
+	        <div class="section-text">
+	        	<p>
+	        		A <a href="http://en.wikipedia.org/wiki/Subroutine">function</a> is like a sub-program that executes a specific task within a larger program. Judicious use reduces the amount of code a programmer must write and allows a program to be built as a series of sub-programs that can be built, tested, and re-used. This simplifies the task of writing complex programs. Functions take some input(s) or parameter(s) and return some output(s).
+	        	</p>
+	        </div>
+	    </div>
+	    <div class="section">
+	        <div class="section-title" id="lesson-4-4">
+	            Control Flow
+	        </div>
+	        <div class="section-text">
+	        	<p>
+	        		<a href="http://en.wikipedia.org/wiki/Control_flow">Control flow</a> refers to specifying the order that tasks are executed. Some tasks need to be repeated until some endpoint is reached or condition is met; for and while are used, respectively, sometimes in conjunction with break. Some tasks only take place if a certain condition is met; these are conditional statements like if, then, else. If a condition is met, then the code in the block will be executed.
+	        	</p>
+	        </div>
+	    </div>
+	    <div class="section">
+	        <div class="section-title" id="lesson-4-5">
+	            Debugging
+	        </div>
+	        <div class="section-text">
+	        	<p>
+	        		Examine error messages. Work from example code and understand the desired inputs and outputs. Test examples. Check intermediate results with the prodigious use of print statements. Record and compare previous versions and results. To help minimize the debugging process, break down problems into simple pieces that can be tested individually and fit together.
+	        	</p>
+	        </div>
+	    </div>
+	</div>
+{% endblock %}

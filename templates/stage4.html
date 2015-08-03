@@ -1,0 +1,37 @@
+{% extends "course_page.html" %}
+{% block title %}Stage 4 Notes {% endblock %}
+{% block content %}
+<div class="lesson">
+		<h2 id="lesson-6">Lesson 6: Servers, Validation, and HTML Templates</h2>
+		<div class="section">
+			<div class="section-title" id="lesson-6-1">
+				Servers
+			</div>
+			<div class="section-text">
+				<p>
+					A server is a computer that stores information and handles requests made by another computer. A client is a computer that accesses a server or its information. The rules governing how servers and clients interact is HTTP. Two basic interactions between servers and clients are GET and POST methods. Clients GET or request information from a server, like a web page. Clients POST or submit data to servers, like comments on a web page, which often respond to the client with an updated web page. The request requires a method (like GET), the URL path, the protocol used, and protocol version. 
+				</p>
+			</div>
+		</div>
+		<div class="section">
+			<div class="section-title" id="lesson-6-2">
+				Validation
+			</div>
+			<div class="section-text">
+				<p>
+					All POST requests must be validated; this is a basic security measure and a check to ensure that appropriate data is being submitted to the server. For example, without validation a user could submit code to corrupt data on the server; alternatively, a form requesting a birthday may accidentally be given address data, which would require correcting after the fact. It is easier to prevent errors and malicious attacks than fix them later.
+				</p>
+			</div>
+		</div>
+		<div class="section">
+			<div class="section-title" id="lesson-6-3">
+				HTML Templates and Abstraction
+			</div>
+			<div class="section-text">
+				<p>
+					Templates are used by web developers to automate repetitive tasks and reduce errors. A common application is the basic HTML layout of web pages associated with a web site; if information in the header and footer of each page is the similar, then that HTML need not be written by the programmer for each page.
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

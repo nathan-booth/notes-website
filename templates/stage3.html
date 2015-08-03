@@ -1,0 +1,53 @@
+{% extends "course_page.html" %}
+{% block title %}Stage 3 Notes {% endblock %}
+{% block content %}
+	<div class="lesson">
+		<h2 id="lesson-5">Lesson 5: Object-Oriented Programming</h2>
+		<div class="section">
+	        <div class="section-title" id="lesson-5-1">
+	            OOP
+	        </div>
+	        <div class="section-text">
+	        	<p>
+	        		Object-Oriented Programming (<a href="http://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a>) in Python refers to a class-based (hierarchical) system that organizes data structures. OOP is useful for increasing intuitive data organization, code reusability, and decomposing large programs into subprograms, which can be built directly. The decomposition process is similar to creating multiple procedural functions in Python to solve a complex computational problem.
+	        	</p>
+	        	<p>
+	        		Class <a href="http://en.wikipedia.org/wiki/Inheritance_%28object-oriented_programming%29">inheritance</a> functions identically in Python and CSS; it has the property of passing on its characteristics or behavior to child classes and instances. Classes share attributes that can be called repetitively. Subclasses have precedence over superclasses and instances have precedence over classes. 
+	        	</p>
+	        </div>
+    	</div>
+	    <div class="section">
+	        <div class="section-title" id="lesson-5-2">
+	            Classes and Objects
+	        </div>
+	        <div class="section-text">
+	        	<p>
+	        		A class defines an archetype of an object. An <a href="http://en.wikipedia.org/wiki/Object_(computer_science)">object</a> (or <a href="http://en.wikipedia.org/wiki/Instance_(computer_science)">instance</a>) of a class is a specific version of that class, like my dog <em>Watson</em> is an object of class <em>Dog</em>. A <a href="http://en.wikipedia.org/wiki/Constructor_%28object-oriented_programming%29">constructor</a> is used to initialize a class; Python uses the __init__ function name within a class definition. __init__ defines the attributes of the class. Classes allow programmers to create new data types and can be re-used.
+	        	</p>
+	        </div>
+	    </div>
+	    <div class="section">
+	        <div class="section-title" id="lesson-5-3">
+	            Methods and Objects
+	        </div>
+	        <div class="section-text">
+		        <p>
+		        	<a href="http://en.wikipedia.org/wiki/Instance_variable">Instance variables</a> exist within a particular instance of a class. Scott Adams, who belongs to the class <em>Human</em>, is assigned <em>male</em> to the instance variable <em>gender</em>. This is separate from the <a href="http://en.wikipedia.org/wiki/Class_variable">class variable</a> <em>gender</em>, which allows for several possible designations, including <em>male</em> and <em>female</em>. Class variables are assigned at the class level of code, not the function level within a class.
+		        </p>
+		        <p>
+		        	<a href="http://en.wikipedia.org/wiki/Method_(computer_programming)">Methods</a> are functions associated with a particular class. <a href="http://en.wikipedia.org/wiki/Method_%28computer_programming%29">Instance methods</a> are functions within a class definition that control that class's behavior. <a href="http://en.wikipedia.org/wiki/Method_overriding">Method overriding</a> happens when subclass methods are executed over superclass methods of the same name, parameters, and return type.
+		        </p>
+	        </div>
+	    </div>
+	    <div class="section">
+	        <div class="section-title" id="lesson-5-4">
+	            Collections and Abstraction
+	        </div>
+	        <div class="section-text">
+	        	<p>
+	        		A <a href="http://en.wikipedia.org/wiki/Library_(computing)">library</a> is a large collection of related modules and code. <a href="http://en.wikipedia.org/wiki/Modular_programming">Modules</a> are collections of related functions and classes built for specific purposes. Modules are written in self-contained files that programs can call upon at need, similar to HTML documents calling CSS or JavaScript files to fulfill styling and dynamic function, respectively. <a href="http://en.wikipedia.org/wiki/Abstraction_(computer_science)">Abstraction</a> refers to how code details are hidden in order to manage the complexity of the code, be they Python or CSS classes or the HTML DOM. The details of methods are hidden to emphasize their functionality to users over their construction. 
+	        	</p>
+	        </div>
+	    </div>
+	</div>
+{% endblock %}
