@@ -19,7 +19,7 @@ class Handler(webapp2.RequestHandler):
 
 class MainPaige(Handler):
 	def get(self):
-		self.render("note_page.html")
+		self.render("course_toc.html")
 
 class Stage1(Handler):
 	def get(self):
