@@ -1,7 +1,0 @@
-CSS
-
-CSS stands for "cascading style sheets" and is the code that works in conjunction with HTML to affect the look or style of HTML documents. (Side note: CSS is usually used as a singular noun.) This is accomplished by using classes in HTML that CSS can use to affect everything of the same class plus the child elements of that class (see: inheritance).
-
-On Repetition
-
-Code is used to describe and execute patterns; in programs, it automates repetitious tasks. For static objects, like many documents, programmers still like to avoid repetition in order to maintain consistent code and avoid errors. In the context of HTML and CSS, using classes to make style changes means that coders need only write a code for a class and not rewrite code each time a particular effect is needed. This reduces the chance for minor errors and simplifies the debugging process.

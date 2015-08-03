@@ -19,8 +19,7 @@ class Handler(webapp2.RequestHandler):
 
 class MainPaige(Handler):
 	def get(self):
-		items = self.request.get_all("food")
-		self.render("course_page.html", items = items)
+		self.render("course_page.html")
 		
 app = webapp2.WSGIApplication([('/', MainPaige),
 								],
