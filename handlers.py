@@ -2,6 +2,8 @@ import os
 import webapp2
 import jinja2
 from google.appengine.ext import ndb
+# forcing sleep for testing
+import time
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
@@ -38,14 +40,23 @@ class Stage4(Handler):
 	def get(self):
 		self.render("stage4.html")
 
-# example dataset from which to design input
-# make a Comment class
-Comment = namedtuple('Comment', ['name', 'text'])
+class Comment(ndb.Model):
+  name = ndb.StringProperty()
+  comment = ndb.StringProperty()
+  date = ndb.DateTimeProperty(auto_now_add=True)
 
-# example data
-comments = [Comment('Phil', 'Add X and remove Y.'),
-			Comment('Lindsey', 'Change Z.')]
-		
+# populate datastore for testing
+comment1 = Comment(name='Phil', comment='Add X.')
+comment2 = Comment(name='Nadia', comment='Remove Y.')
+comment3 = Comment(name='John', comment='Change Z.')
+
+# update datastore
+comment1.put()
+comment2.put()
+comment3.put()
+# all time for datastore update
+time.sleep(.1)
+
 app = webapp2.WSGIApplication([('/', MainPaige),
 							   ('/stage1', Stage1),
 							   ('/stage2', Stage2),
