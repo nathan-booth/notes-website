@@ -3,7 +3,7 @@
 {% block content %}
 	<div>
 		<center><a href="http://localhost:13080">Table of Contents</a></center>
-	</div> 
+	</div>
 	<div class="lesson">
 		<h2 id="lesson-1">Lesson 1: The Web and HTML</h2>
 		<div class="section">
@@ -44,7 +44,7 @@
 				Document Object Model (DOM)
 			</div>
 			<div class="section-text">
-				<p> 
+				<p>
 					The <a href="http://en.wikipedia.org/wiki/Document_Object_Model">DOM</a> refers to the tree-like or nested structure of HTML documents. A web page can be viewed as a series of nested boxes in which content resides. Properly structured code uses indentation to reflect the organization of the boxes.
 				</p>
 			</div>
@@ -62,5 +62,16 @@
 				</p>
 			</div>
 		</div>
+	<div>
+		<form method="post">
+			Name:<br>
+			<input type="text" name="name">
+			<br>
+			Comment:<br>
+			<textarea name="comment" rows="3" cols="60"></textarea>
+			<br>
+			<input type="submit" value="Post Comment">
+		</form>
+	</div>
 	</div>
 {% endblock %}
