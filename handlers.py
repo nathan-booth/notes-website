@@ -61,10 +61,11 @@ class CommentsHandler(CoursePaige):
 		comment.comment_content = self.request.get('comment_content')
 		comment.put()
 
-		if comment.name != '' or comment.comment_content != '':
-            self.redirect('/?error=Please fill out the name and comment sections.')
-        else:
-        	comment.put()
+		# will be for validation
+		# if comment.name != '' or comment.comment_content != '':
+		# 	self.redirect('/?error=Please fill out the name and comment sections.')
+		# else:
+		# 	comment.put()
 
 		self.redirect('/', CoursePaige)
 
