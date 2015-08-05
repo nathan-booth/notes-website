@@ -20,9 +20,13 @@ class Handler(webapp2.RequestHandler):
 	def render(self, template, **kw):
 		self.write(self.render_str(template, **kw))
 
-class MainPaige(Handler):
+class CoursePaige(Handler):
 	def get(self):
 		self.render("course_toc.html")
+
+		# enable queries
+		comments_query = Comment.query().order(-Comment.date)
+		comments = comments_query.fetch()
 
 class Stage1(Handler):
 	def get(self):
@@ -40,24 +44,41 @@ class Stage4(Handler):
 	def get(self):
 		self.render("stage4.html")
 
+class Stage5(Handler):
+	def get(self):
+		self.render("stage5.html")
+
+# Model for individual comment
 class Comment(ndb.Model):
-  name = ndb.StringProperty()
-  comment = ndb.StringProperty()
-  date = ndb.DateTimeProperty(auto_now_add=True)
+	name = ndb.StringProperty()
+	comment_content = ndb.StringProperty()
+	date = ndb.DateTimeProperty(auto_now_add=True)
 
-# populate datastore for testing
-comment1 = Comment(name='Phil', comment='Add X.')
-comment2 = Comment(name='Nadia', comment='Remove Y.')
-comment3 = Comment(name='John', comment='Change Z.')
+class CommentsHandler(webapp2.RequestHandler):
+	def post(self):
+		comment = Comment(parent=comment_key)
+		comment.name = self.request.get('name')
+		comment.comment_content = self.request.get('comment_content')
+		comment.put()
 
-# update datastore
-comment1.put()
-comment2.put()
-comment3.put()
-# all time for datastore update
-time.sleep(.1)
+		self.redirect('/', CoursePaige)
 
-app = webapp2.WSGIApplication([('/', MainPaige),
+# comment key Kind and Identifier
+comment_key = ndb.Key('Comment', 'course_toc')
+
+# # populate datastore for testing
+# comment1 = Comment(name='Phil', comment='Add X.')
+# comment2 = Comment(name='Nadia', comment='Remove Y.')
+# comment3 = Comment(name='John', comment='Change Z.')
+
+# # update datastore
+# comment1.put()
+# comment2.put()
+# comment3.put()
+# # all time for datastore update
+# time.sleep(.1)
+
+app = webapp2.WSGIApplication([('/', CoursePaige),
 							   ('/stage1', Stage1),
 							   ('/stage2', Stage2),
 							   ('/stage3', Stage3),
