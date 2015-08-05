@@ -22,11 +22,11 @@ class Handler(webapp2.RequestHandler):
 
 class CoursePaige(Handler):
 	def get(self):
-		self.render("course_toc.html")
-
 		# enable queries
-		comments_query = Comment.query().order(-Comment.date)
+		comments_query = Comment.query(ancestor=comment_key).order(-Comment.date)
 		comments = comments_query.fetch()
+
+		self.render("course_toc.html", comments=comments)
 
 class Stage1(Handler):
 	def get(self):
@@ -54,16 +54,21 @@ class Comment(ndb.Model):
 	comment_content = ndb.StringProperty()
 	date = ndb.DateTimeProperty(auto_now_add=True)
 
-class CommentsHandler(webapp2.RequestHandler):
+class CommentsHandler(CoursePaige):
 	def post(self):
 		comment = Comment(parent=comment_key)
 		comment.name = self.request.get('name')
 		comment.comment_content = self.request.get('comment_content')
 		comment.put()
 
+		if comment.name != '' or comment.comment_content != '':
+            self.redirect('/?error=Please fill out the name and comment sections.')
+        else:
+        	comment.put()
+
 		self.redirect('/', CoursePaige)
 
-# comment key Kind and Identifier
+# comment key(Kind, Identifier)
 comment_key = ndb.Key('Comment', 'course_toc')
 
 # # populate datastore for testing
