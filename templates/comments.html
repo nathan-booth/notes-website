@@ -7,14 +7,20 @@
 <div>
 	<form method="post" action="/comments">
 		Name:<br>
+		<!-- add required attribute after testing -->
 		<input type="text" name="name" >
 		<!-- required attribute not supported by Safari -->
 		<br>
 		Comment:<br>
+		<!-- add required attribute after testing -->
 		<textarea name="comment_content" rows="3" cols="60" ></textarea>
 		<br>
 		<input type="submit" value="Post Comment">
 	</form>
+</div>
+<div>
+<!-- for displaying a conditional error msg -->
+	{% if blank_error %}<center><h3>{{blank_error}}</h3></center>{% endif %}
 </div>
 <br>
 <div>

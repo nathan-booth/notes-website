@@ -2,8 +2,6 @@ import os
 import webapp2
 import jinja2
 from google.appengine.ext import ndb
-# forcing sleep for testing
-import time
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
@@ -65,9 +63,10 @@ class CommentsHandler(CoursePaige):
 		comment.name = self.request.get('name')
 		comment.comment_content = self.request.get('comment_content')
 
-		# will be for validation
+		# validation
 		if comment.name == '' or comment.comment_content == '':
-			self.redirect('/error')
+			blank_error = "Please, fill out both the name and comment sections."
+			self.redirect('/comments')
 		else:
 			comment.put()
 
