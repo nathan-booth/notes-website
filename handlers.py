@@ -44,7 +44,10 @@ class Stage5(Handler):
 	def get(self):
 		self.render("stage5.html")
 
-# Model for individual comment
+class Error(Handler):
+	def get(self):
+		self.render("error.html")
+
 class Comment(ndb.Model):
 	name = ndb.StringProperty()
 	comment_content = ndb.StringProperty()
@@ -61,12 +64,10 @@ class CommentsHandler(CoursePaige):
 		comment = Comment(parent=comment_key)
 		comment.name = self.request.get('name')
 		comment.comment_content = self.request.get('comment_content')
-		# temp, for testing
-		# comment.put()
 
 		# will be for validation
 		if comment.name == '' or comment.comment_content == '':
-			self.redirect('/comments?error=Please fill out the name and comment sections.')
+			self.redirect('/error')
 		else:
 			comment.put()
 
@@ -80,7 +81,7 @@ app = webapp2.WSGIApplication([('/', CoursePaige),
 							   ('/stage3', Stage3),
 							   ('/stage4', Stage4),
 							   ('/stage5', Stage4),
-							   ('/comments', CommentsHandler)
-							   # ('/?error', CommentsHandler)
+							   ('/comments', CommentsHandler),
+							   ('/error', Error)
 							   ],
 								debug=True)
