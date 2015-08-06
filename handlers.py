@@ -52,40 +52,27 @@ class Comment(ndb.Model):
 
 class CommentsHandler(CoursePaige):
 	def get(self):
-		# enable queries
 		comments_query = Comment.query(ancestor=comment_key).order(-Comment.date)
 		comments = comments_query.fetch()
 
-		self.render("comments.html")
+		self.render("comments.html", comments=comments)
 
 	def post(self):
 		comment = Comment(parent=comment_key)
 		comment.name = self.request.get('name')
 		comment.comment_content = self.request.get('comment_content')
 		# temp, for testing
-		comment.put()
+		# comment.put()
 
 		# will be for validation
-		# if comment.name == '' or comment.comment_content == '':
-		# 	self.redirect('/?error=Please fill out the name and comment sections.')
-		# else:
-		# 	comment.put()
+		if comment.name == '' or comment.comment_content == '':
+			self.redirect('/comments?error=Please fill out the name and comment sections.')
+		else:
+			comment.put()
 
 		self.redirect('/comments')
 
 comment_key = ndb.Key('Comment', 'course_toc')
-
-# # populate datastore for testing
-# comment1 = Comment(name='Phil', comment='Add X.')
-# comment2 = Comment(name='Nadia', comment='Remove Y.')
-# comment3 = Comment(name='John', comment='Change Z.')
-
-# # update datastore
-# comment1.put()
-# comment2.put()
-# comment3.put()
-# # all time for datastore update
-# time.sleep(.1)
 
 app = webapp2.WSGIApplication([('/', CoursePaige),
 							   ('/stage1', Stage1),
@@ -94,5 +81,6 @@ app = webapp2.WSGIApplication([('/', CoursePaige),
 							   ('/stage4', Stage4),
 							   ('/stage5', Stage4),
 							   ('/comments', CommentsHandler)
+							   # ('/?error', CommentsHandler)
 							   ],
 								debug=True)
