@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Course Comments{% endblock %}
+{% block content %}
+<div>
+	<form method="post" action="/comments.html">
+		Name:<br>
+		<input type="text" name="name">
+		<br>
+		Comment:<br>
+		<textarea name="comment_content" rows="3" cols="60"></textarea>
+		<br>
+		<input type="submit" value="Post Comment">
+	</form>
+</div>
+<br>
+<div>
+	placeholder for list
+</div>
+{% endblock %}

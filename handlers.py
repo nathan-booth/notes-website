@@ -22,11 +22,7 @@ class Handler(webapp2.RequestHandler):
 
 class CoursePaige(Handler):
 	def get(self):
-		# enable queries
-		comments_query = Comment.query(ancestor=comment_key).order(-Comment.date)
-		comments = comments_query.fetch()
-
-		self.render("course_toc.html", comments=comments)
+		self.render("course_toc.html")
 
 class Stage1(Handler):
 	def get(self):
@@ -55,21 +51,28 @@ class Comment(ndb.Model):
 	date = ndb.DateTimeProperty(auto_now_add=True)
 
 class CommentsHandler(CoursePaige):
+	def get(self):
+		# enable queries
+		comments_query = Comment.query(ancestor=comment_key).order(-Comment.date)
+		comments = comments_query.fetch()
+
+		self.render("comments.html")
+
 	def post(self):
 		comment = Comment(parent=comment_key)
 		comment.name = self.request.get('name')
 		comment.comment_content = self.request.get('comment_content')
+		# temp, for testing
 		comment.put()
 
 		# will be for validation
-		# if comment.name != '' or comment.comment_content != '':
+		# if comment.name == '' or comment.comment_content == '':
 		# 	self.redirect('/?error=Please fill out the name and comment sections.')
 		# else:
 		# 	comment.put()
 
-		self.redirect('/', CoursePaige)
+		self.redirect('/comments')
 
-# comment key(Kind, Identifier)
 comment_key = ndb.Key('Comment', 'course_toc')
 
 # # populate datastore for testing
@@ -90,5 +93,6 @@ app = webapp2.WSGIApplication([('/', CoursePaige),
 							   ('/stage3', Stage3),
 							   ('/stage4', Stage4),
 							   ('/stage5', Stage4),
+							   ('/comments', CommentsHandler)
 							   ],
 								debug=True)
