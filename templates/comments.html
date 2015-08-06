@@ -5,7 +5,7 @@
 	<center><a href="http://localhost:13080">Table of Contents</a></center>
 </div>
 <div>
-	<form method="post" action="/comments.html">
+	<form method="post" action="/comments">
 		Name:<br>
 		<input type="text" name="name">
 		<br>
@@ -17,6 +17,12 @@
 </div>
 <br>
 <div>
-	placeholder for list
+	<h2>Reader Comments:</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{comment.comment_content}}</li>
+            <li>{{comment.name}}</li>
+        {% endfor %}
+    </ul>
 </div>
 {% endblock %}
