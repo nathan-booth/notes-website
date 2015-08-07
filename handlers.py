@@ -62,7 +62,7 @@ class CommentsHandler(CoursePaige):
         comment.comment_content = self.request.get('comment_content')
         blank_error = ''
 
-        if comment.name == '' or comment.comment_content == '':
+        if comment.name == '' or comment.comment_content == '' or len(comment.name) > 15 or len(comment.comment_content) > 1000:
             blank_error = "Please, fill out both the name and comment sections."
         else:
             comment.put()
