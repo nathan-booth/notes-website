@@ -22,25 +22,9 @@ class CoursePaige(Handler):
     def get(self):
         self.render("course_toc.html")
 
-class Stage1(Handler):
-    def get(self):
-        self.render("stage1.html")
-
-class Stage2(Handler):
-    def get(self):
-        self.render("stage2.html")
-
-class Stage3(Handler):
-    def get(self):
-        self.render("stage3.html")
-
-class Stage4(Handler):
-    def get(self):
-        self.render("stage4.html")
-
-class Stage5(Handler):
-    def get(self):
-        self.render("stage5.html")
+class Stage(Handler):
+    def get(self, stage_num):
+        self.render("stage{0}.html".format(stage_num))
 
 class Comment(ndb.Model):
     name = ndb.StringProperty()
@@ -79,11 +63,7 @@ class CommentsHandler(CoursePaige):
 comment_key = ndb.Key('Comment', 'course_toc')
 
 app = webapp2.WSGIApplication([('/', CoursePaige),
-                               ('/stage1', Stage1),
-                               ('/stage2', Stage2),
-                               ('/stage3', Stage3),
-                               ('/stage4', Stage4),
-                               ('/stage5', Stage4),
+                               ('/stage(\d+)', Stage),
                                ('/comments', CommentsHandler)
                                ],
                                 debug=True)
