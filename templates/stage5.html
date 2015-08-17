@@ -5,36 +5,26 @@
 		<center><a href="/">Table of Contents</a></center>
 	</div>
 <div class="lesson">
-		<h2 id="lesson-7">Lesson 7: </h2>
-		<div class="section">
-			<div class="section-title" id="lesson-7-1">
-				title
-			</div>
-			<div class="section-text">
-				<p>
-					text
-				</p>
-			</div>
+	<h2 id="lesson-7">Lesson 7: Sets and Recursion</h2>
+	<div class="section">
+		<div class="section-title" id="lesson-7-1">
+			Sets
 		</div>
-		<div class="section">
-			<div class="section-title" id="lesson-7-2">
-				title
-			</div>
-			<div class="section-text">
-				<p>
-					text
-				</p>
-			</div>
-		</div>
-		<div class="section">
-			<div class="section-title" id="lesson-7-3">
-				title
-			</div>
-			<div class="section-text">
-				<p>
-					text
-				</p>
-			</div>
+		<div class="section-text">
+			<p>
+				Python can be used to implement basic <a href="http://www.python-course.eu/sets_frozensets.php">set theory</a> concepts. Each element of a set is unique, which is not necessarily the case for lists or tuples. Elements of sets must be immutable but the sets themselves may be mutable or immutable (called frozen sets). The set function is not necessary to build a set; instead, braces may be used. The standard library includes functions for basic set operations including identification of a set, difference and symmetric difference, union, and intersection.
+			</p>
 		</div>
 	</div>
+	<div class="section">
+		<div class="section-title" id="lesson-7-2">
+			Recursion
+		</div>
+		<div class="section-text">
+			<p>
+				A <a href="http://openbookproject.net/thinkcs/python/english3e/recursion.html">recursive function</a> uses a limited version of itself within itself. A recursive definition requires at least two rules, a base case and a recursive case (or recursive call, in a function). It's the base case that eliminates circular logic or infinite recursive depth. Common recursive examples include fractals, Pascal's triangle, and the Fibonacci sequence. Data structures may be recursively defined, such nested number lists composed of either numbers or other nested number lists.
+			</p>
+		</div>
+	</div>
+</div>
 {% endblock %}
